@@ -1,0 +1,8 @@
+1.  How to pass data from one child component to different child component, which is the better approach?
+Ans : 1. Lifiting the state up : In this method u stre the shared variables in the parent company and pass it down as props to child component , so this is most simple and effect for passing data from parent to child in small application , In huge application this may lead to prop drilling
+
+2. Uscallback is a react hook , which memoizes function , it ensures that the functions are recreated only when dependecy are changed , this helps in unecessary re-creation of function especisally when this function are passed as a prop to a child component , so this uneccessary function recreation can lead to re-rendering of child components 
+
+3. Usecontext hook is a feature in react js which provide components to access shared values through the context , whithout passing the props at every level of component tree , bascially it simplifies the state mangement of the application by providing acess to the state globally 
+
+4. useMemo is the react hook which memoizes the computed values , and re computes it only during the time when depedency are changed , this prevents the re computes each time when component is re-rendered
